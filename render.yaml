@@ -1,0 +1,23 @@
+
+services:
+  - type: web
+    name: ioss-backend
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn -c backend/gunicorn.conf.py app:app -w 2 -b 0.0.0.0:$PORT
+    autoDeploy: true
+    rootDir: .
+    envVars:
+      - key: FLASK_ENV
+        value: production
+  - type: static
+    name: ioss-frontend
+    buildCommand: npm --prefix frontend ci && npm --prefix frontend run build
+    publishPath: frontend/dist
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: VITE_API_URL
+        # Replace this value after backend is deployed on Render
+        value: https://YOUR-RENDER-BACKEND.onrender.com

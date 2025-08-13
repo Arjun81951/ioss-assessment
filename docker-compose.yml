@@ -1,0 +1,31 @@
+
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: ioss-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - FLASK_ENV=production
+    networks:
+      - iossnet
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: ioss-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - iossnet
+
+networks:
+  iossnet:
+    driver: bridge

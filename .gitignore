@@ -1,0 +1,21 @@
+
+# General
+node_modules
+dist
+build
+.env
+.env.*
+*.log
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.envrc
+
+# Docker
+*.pid
+
+# Vite
+.vite

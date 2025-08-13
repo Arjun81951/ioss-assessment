@@ -19,28 +19,32 @@ export default function App() {
   }, [])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-xl w-full p-8 bg-white rounded-2xl shadow">
-        <h1 className="text-2xl font-bold mb-2">iOSS Assessment Starter</h1>
-        <p className="text-gray-600 mb-6">Flask API + React + Docker</p>
+    <div
+      className="min-h-screen flex items-center justify-center bg-gray-50 bg-cover bg-center"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1502877338535-766e1452684a')"
+      }}
+    >
+      <div className="max-w-xl w-full p-8 bg-white bg-opacity-90 rounded-2xl shadow-lg">
+        <h1 className="text-3xl font-bold mb-2 text-center">Arjun Manoj</h1>
+        <p className="text-gray-600 mb-6 text-center italic">
+          "Once upon a time, there was a sleek red sports car named Blaze.
+          It loved racing through winding roads, feeling the wind
+          rush past, and dreaming of one day becoming a champion."
+        </p>
 
-        {/* Your name card */}
-        <div className="p-4 rounded-xl border bg-blue-50 text-center">
-          <div className="text-lg font-semibold text-blue-700">Arjun Manoj</div>
-        </div>
-
-        <div className="space-y-3 mt-4">
-          <div className="p-4 rounded-xl border">
+        <div className="space-y-3">
+          <div className="p-4 rounded-xl border bg-white bg-opacity-80">
             <div className="text-sm text-gray-500">Backend health</div>
             <div className="text-lg font-semibold">{health}</div>
           </div>
 
-          <div className="p-4 rounded-xl border">
+          <div className="p-4 rounded-xl border bg-white bg-opacity-80">
             <div className="text-sm text-gray-500">Example message</div>
             <div className="text-lg font-semibold">{msg}</div>
           </div>
 
-          <div className="p-4 rounded-xl border">
+          <div className="p-4 rounded-xl border bg-white bg-opacity-80">
             <div className="text-sm text-gray-500">Env</div>
             <code className="text-xs break-all">{API_URL}</code>
           </div>

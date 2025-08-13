@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from 'react'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const API_URL = import.meta.env.VITE_API_URL || 'https://ioss-assessment-nft3.onrender.com';
 
 export default function App() {
   const [msg, setMsg] = useState('Loading...')
@@ -25,7 +24,12 @@ export default function App() {
         <h1 className="text-2xl font-bold mb-2">iOSS Assessment Starter</h1>
         <p className="text-gray-600 mb-6">Flask API + React + Docker</p>
 
-        <div className="space-y-3">
+        {/* Your name card */}
+        <div className="p-4 rounded-xl border bg-blue-50 text-center">
+          <div className="text-lg font-semibold text-blue-700">Arjun Manoj</div>
+        </div>
+
+        <div className="space-y-3 mt-4">
           <div className="p-4 rounded-xl border">
             <div className="text-sm text-gray-500">Backend health</div>
             <div className="text-lg font-semibold">{health}</div>
